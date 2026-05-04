@@ -1,5 +1,5 @@
 # i need to run a mongo container
-# command is docker-compose -u (cross-check ???)
+# command is docker-compose up (cross-check ???)
 
 services:
   mongo:
