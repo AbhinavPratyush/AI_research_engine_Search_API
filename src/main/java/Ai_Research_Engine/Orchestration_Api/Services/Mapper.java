@@ -3,8 +3,7 @@ package Ai_Research_Engine.Orchestration_Api.Services;
 import Ai_Research_Engine.Orchestration_Api.DTO.QueryDTO;
 import Ai_Research_Engine.Orchestration_Api.Repo.QuerrySentFromUser;
 import Ai_Research_Engine.Orchestration_Api.Repo.UrlSentForRanking;
-import Ai_Research_Engine.Orchestration_Api.SerperApi.QuerrySent;
-import Ai_Research_Engine.Orchestration_Api.SerperApi.UrlResult;
+import Ai_Research_Engine.Orchestration_Api.DuckDuckGo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package Ai_Research_Engine.Orchestration_Api.Repo;
 
-import Ai_Research_Engine.Orchestration_Api.SerperApi.UrlResult;
+import Ai_Research_Engine.Orchestration_Api.DuckDuckGo.UrlResult;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;

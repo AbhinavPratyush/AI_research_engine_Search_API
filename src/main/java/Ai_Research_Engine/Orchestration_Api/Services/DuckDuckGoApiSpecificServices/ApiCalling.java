@@ -1,21 +1,18 @@
-package Ai_Research_Engine.Orchestration_Api.Services.ApiSpecificServices;
+package Ai_Research_Engine.Orchestration_Api.Services.DuckDuckGoApiSpecificServices;
 
-import Ai_Research_Engine.Orchestration_Api.SerperApi.UrlResult;
 import Ai_Research_Engine.Orchestration_Api.Repo.ServerResponse;
-import Ai_Research_Engine.Orchestration_Api.SerperApi.QuerrySent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import Ai_Research_Engine.Orchestration_Api.DuckDuckGo.QuerrySent;
+import Ai_Research_Engine.Orchestration_Api.DuckDuckGo.UrlResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Collections;
 import java.util.List;
 
-//@Service
+@Service
 public class ApiCalling {
 
     @Value("${base.url}")
@@ -25,14 +22,15 @@ public class ApiCalling {
 @Autowired
     RestClient restClient;
 
-    public List<UrlResult> serpApi(QuerrySent querrySent){
+    public List<UrlResult> duckDuckGoApi(QuerrySent querrySent){
 //       private final ElasticsearchProperties.Restclient restclient= Rest
 
         URI uri = UriComponentsBuilder.fromUriString(Base_Url)
                 .queryParam("engine", querrySent.getEngine())
                 .queryParam("q", querrySent.getQ())
                 .queryParam("api_key", querrySent.getApiKey())
-                .queryParam("num", querrySent.getNum())
+                .queryParam("num", querrySent.getM())
+                .queryParam("kl",querrySent.getKl())
                 .queryParam("start", querrySent.getStart())
                 .build()
                 .toUri();
@@ -43,8 +41,7 @@ public class ApiCalling {
                 uri
         ).retrieve().body(ServerResponse.class);
         assert response != null;
-        return null;
-//        return response.getOrganic_results();
+        return response.getOrganic_results();
 
 
     }

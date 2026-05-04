@@ -1,17 +1,13 @@
-package Ai_Research_Engine.Orchestration_Api.Services.ApiSpecificServices;
+package Ai_Research_Engine.Orchestration_Api.Services.DuckDuckGoApiSpecificServices;
 
-import Ai_Research_Engine.Orchestration_Api.DTO.QueryDTO;
-import Ai_Research_Engine.Orchestration_Api.Repo.QuerrySentFromUser;
 import Ai_Research_Engine.Orchestration_Api.Repo.UrlSentForRanking;
-import Ai_Research_Engine.Orchestration_Api.SerperApi.QuerrySent;
-import Ai_Research_Engine.Orchestration_Api.SerperApi.UrlResult;
+import Ai_Research_Engine.Orchestration_Api.DuckDuckGo.QuerrySent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.List;
 
-//@Service
+@Service
 public class ApiCallPrep {
     @Autowired
     FillUpTheQuerry fillUpTheQuerry;
