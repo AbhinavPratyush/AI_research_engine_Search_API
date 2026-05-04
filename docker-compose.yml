@@ -1,2 +1,14 @@
 # i need to run a mongo container
 # command is docker-compose -u (cross-check ???)
+
+services:
+  mongo:
+    image: mongo
+    container_name: QueryDb
+    ports:
+      - "27017:27017"
+    volumes:
+      - research-engine-mongo-data:/data/db
+
+volumes:
+  research-engine-mongo-data:

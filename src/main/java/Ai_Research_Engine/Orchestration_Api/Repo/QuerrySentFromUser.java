@@ -2,17 +2,18 @@ package Ai_Research_Engine.Orchestration_Api.Repo;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Document(collection = "Querry")
 public class QuerrySentFromUser {
 
     String query;
-    public List<String> urlAssociated;
+    public ArrayList<String> urlAssociated;
 
 
 
-    public QuerrySentFromUser(String query, List<String> urlAssociated) {
+    public QuerrySentFromUser(String query, ArrayList<String> urlAssociated) {
         this.query = query;
         this.urlAssociated = urlAssociated;
     }
@@ -28,11 +29,13 @@ public class QuerrySentFromUser {
         this.query = query;
     }
 
-    public List<String> getUrlAssociated() {
+    public ArrayList<String> getUrlAssociated() {
         return urlAssociated;
     }
 
-    public void setUrlAssociated(List<String> urlAssociated) {
-        this.urlAssociated = urlAssociated;
+    public void setUrlAssociated(ArrayList<String> urlAssociated) {
+this.urlAssociated=urlAssociated;
     }
+
+
 }
